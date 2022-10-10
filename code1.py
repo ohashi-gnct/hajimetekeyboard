@@ -3,26 +3,24 @@ import time
 import usb_hid
 from digitalio import DigitalInOut, Pull,Direction
 from adafruit_hid.keyboard import Keyboard
-# とりあえずUS配列前提
 from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
 from adafruit_hid.keycode import Keycode
 
-# キーボードの設定を行う
 keyboard  = Keyboard(usb_hid.devices)
 keyboard_layout = KeyboardLayoutUS(keyboard)
 
 
-# タクトスイッチのつながっているところを設定。
+# スイッチのピンを設定
 switch_pins = [board.GP11, board.GP12, board.GP13]
 switches = []
 for pin in switch_pins:
     switch = DigitalInOut(pin)
     switch.direction = Direction.INPUT
-    # 今回は抵抗を使用しないのでプルアップしておきましょう。
+    # 内部のプルアップ抵抗を使用
     switch.pull = Pull.UP
     switches.append(switch)
 
-# タクトスイッチが押されているか視覚的にわかりやすいようにledも使う。
+# LEDのピンを設定
 led_pins = [board.GP2, board.GP3, board.GP4]
 leds = []
 for pin in led_pins:
@@ -33,11 +31,12 @@ for pin in led_pins:
 # 入力したい文字列たち
 strings = ["hajimemashite", "konnnichiha", "konnbannha"]
 
-# ここから無限ループ
 while True:
     for switch, led, string in zip(switches, leds, strings):
         led.value = 1
-
+        
+        # switch.value == 0がスイッチが押された状態
+        # スイッチが押されたとき、対応するLEDを消灯する。
         if switch.value == 0:
             keyboard_layout.write(string)
             led.value = 0
@@ -45,3 +44,4 @@ while True:
             led.value = 1
 
     time.sleep(0.01)
+
