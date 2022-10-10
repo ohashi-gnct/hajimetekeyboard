@@ -79,7 +79,7 @@ Raspberry Pi Picoを使って自由にカスタマイズした定型文を入力
 
 ## セットアップ手順
 
-Raspberry Pi Picoの初期設定を行い、動作確認する。
+Raspberry Pi PicoにCircuitPythonをインストールし、キーボードとして使用する。
 
 以下の手順ではWindows 10を想定している。
 
@@ -89,9 +89,25 @@ CircuitPythonのバージョン`6.3.0`を使用して動作確認を行った。
 
 ### CircuitPythonのインストール
 
+まずは、Raspberry Pi PicoにCircuitPythonのイメージファイルをインストールする。
+
+[Pico Download](https://circuitpython.org/board/raspberry_pi_pico/)
+
+`adafruit-circuitpython-raspberry_pi_pico-なんたら.uf2`というファイルがダウンロードされたら成功。
+
+次に、Raspberry Pi Picoにある白いボタン（横に`BOOSTEL`と書かれている）を押しながらUSBをパソコンに接続する。
+
+エクスプローラを開き、`PC`の中に`RPI-RP2`（あるいはこれに似た文字列）というドライブが表示される。
+
+このドライブ`RPI-RP2`のなかに`adafruit-circuitpython-raspberry_pi_pico-なんたら.uf2`をコピーする。
+
+コピーが終わると`RPI-RP2`が消え、代わりに`CIRCUITPY`というドライブが表示される。
+
+これでCircuitPythonがRaspberry Pi Picoにインストールされた。
 
 ### HIDライブラリのインストール
 
+[Releases · adafruit/Adafruit_CircuitPython_HID](https://github.com/adafruit/Adafruit_CircuitPython_HID/releases)
 
 ### サンプルプログラムの実行
 
@@ -119,13 +135,13 @@ Raspberry Pi Picoのドライブ`CIRCUITPY`の中に`code.py`をコピーする�
 
 ### 課題1 定型文をオリジナルのものに変更しよう
 
-使用するプログラム: `code1.py`
+使用するプログラム: [code1.py](./code1.py)
 
 ### 課題2 音の鳴るキーボードを作ろう
 
-使用するプログラム: `code2.py`
+使用するプログラム: [code2.py](./code2.py)
 
 
 ### 課題3 テルミンもどきを作ろう
 
-使用するプログラム: `code3.py`
+使用するプログラム: [code3.py](./code3.py)
