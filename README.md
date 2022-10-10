@@ -121,6 +121,11 @@ Raspberry Pi Picoをマウスやキーボードとして使うためのHIDライ
 
 例: MicroPython 7.3.2ならバージョン番号は`7`
 
+ダウンロードしたzipファイルを展開し、`lib`フォルダの中に`adafruit_hid`フォルダがあることを確認しておく。
+
+次に、Raspberry Pi Picoのドライブ`CIRCUITPY`の中の`lib`フォルダの中に`adafruit_hid`フォルダをコピーする。
+
+これでRaspberry Pi Picoをマウスやキーボードとして使えるようになった。
 
 ### サンプルプログラムの実行
 
