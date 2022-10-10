@@ -89,7 +89,7 @@ CircuitPythonのバージョン`6.3.0`を使用して動作確認を行った。
 
 ### CircuitPythonのインストール
 
-まずは、Raspberry Pi PicoにCircuitPythonのイメージファイルをインストールする。
+まずは、Raspberry Pi PicoにCircuitPythonのイメージファイルをインストールする。以下のサイトからダウンロードできる。
 
 [Pico Download](https://circuitpython.org/board/raspberry_pi_pico/)
 
@@ -99,7 +99,7 @@ CircuitPythonのバージョン`6.3.0`を使用して動作確認を行った。
 
 エクスプローラを開き、`PC`の中に`RPI-RP2`（あるいはこれに似た文字列）というドライブが表示される。
 
-このドライブ`RPI-RP2`のなかに`adafruit-circuitpython-raspberry_pi_pico-なんたら.uf2`をコピーする。
+このドライブ`RPI-RP2`のなかに`adafruit-circuitpython-raspberry_pi_pico-なんたら.uf2`をコピーする。（`なんたら`に入っている文字は気にしなくてよい）
 
 コピーが終わると`RPI-RP2`が消え、代わりに`CIRCUITPY`というドライブが表示される。
 
@@ -107,7 +107,20 @@ CircuitPythonのバージョン`6.3.0`を使用して動作確認を行った。
 
 ### HIDライブラリのインストール
 
+Raspberry Pi Picoをマウスやキーボードとして使うためのHIDライブラリをインストールする。
+ライブラリは以下からダウンロードできる。
+
 [Releases · adafruit/Adafruit_CircuitPython_HID](https://github.com/adafruit/Adafruit_CircuitPython_HID/releases)
+
+`Assets`から以下のような名前のファイルをダウンロードする。
+
+`adafruit-circuitpython-hid-[バージョン番号].x-mpy-なんたら.zip`
+
+`Assets`には`[バージョン番号]`の異なるいくつかのファイルがあるが、上でダウンロードしたMicroPythonのバージョン番号の一番左と
+同じ番号にする。
+
+例: MicroPython 7.3.2ならバージョン番号は`7`
+
 
 ### サンプルプログラムの実行
 
