@@ -81,72 +81,24 @@ Raspberry Pi Picoを使って自由にカスタマイズした定型文を入力
 
 Raspberry Pi PicoにCircuitPythonをインストールし、キーボードとして使用する。
 
-以下の手順ではWindows 10を想定している。
+Piper MakeというWebサービスを使う。Chromeで動作する。
 
-CircuitPythonのバージョン`6.3.0`を使用して動作確認を行った。他のバージョンでは仕様が異なる可能性がある。
+[Piper Make](https://make.playpiper.com/)
 
-参考:[7.0.0で正常に動作しないという指摘](https://www.hobbyhappyblog.jp/raspberrypipico-keyboard)
+上記サイトにアクセスし、左下の`SETUP MY PICO`をクリックし、指示に従う。
 
-### CircuitPythonのインストール
+## サンプルプログラムの実行
 
-まずは、Raspberry Pi PicoにCircuitPythonのイメージファイルをインストールする。以下のサイトからダウンロードできる。
+Piper Makeの右下が`STORY MODE`になっているため、`CREATIVE MODE`に変更する。
 
-[Pico Download](https://circuitpython.org/board/raspberry_pi_pico/)
+`NEW PROJECT`を作成し、以下のようにブロックを配置する。
 
-`adafruit-circuitpython-raspberry_pi_pico-なんたら.uf2`というファイルがダウンロードされたら成功。
+![](sample_block.png)
 
-次に、Raspberry Pi Picoにある白いボタン（横に`BOOSTEL`と書かれている）を押しながらUSBをパソコンに接続する。
+左下の`CONNECT`を押してから左上の`START`を押すと、プログラムが動作する。
 
-エクスプローラを開き、`PC`の中に`RPI-RP2`（あるいはこれに似た文字列）というドライブが表示される。
-
-このドライブ`RPI-RP2`のなかに`adafruit-circuitpython-raspberry_pi_pico-なんたら.uf2`をコピーする。（`なんたら`に入っている文字は気にしなくてよい）
-
-コピーが終わると`RPI-RP2`が消え、代わりに`CIRCUITPY`というドライブが表示される。
-
-これでCircuitPythonがRaspberry Pi Picoにインストールされた。
-
-### HIDライブラリのインストール
-
-Raspberry Pi Picoをマウスやキーボードとして使うためのHIDライブラリをインストールする。
-ライブラリは以下からダウンロードできる。
-
-[Releases · adafruit/Adafruit_CircuitPython_HID](https://github.com/adafruit/Adafruit_CircuitPython_HID/releases)
-
-`Assets`から以下のような名前のファイルをダウンロードする。
-
-`adafruit-circuitpython-hid-[バージョン番号].x-mpy-なんたら.zip`
-
-`Assets`には`[バージョン番号]`の異なるいくつかのファイルがあるが、上でダウンロードしたMicroPythonのバージョン番号の一番左と
-同じ番号にする。
-
-例: MicroPython 7.3.2ならバージョン番号は`7`
-
-ダウンロードしたzipファイルを展開し、`lib`フォルダの中に`adafruit_hid`フォルダがあることを確認しておく。
-
-次に、Raspberry Pi Picoのドライブ`CIRCUITPY`の中の`lib`フォルダの中に`adafruit_hid`フォルダをコピーする。
-
-これでRaspberry Pi Picoをマウスやキーボードとして使えるようになった。
-
-### サンプルプログラムの実行
-
-このリポジトリから`code1.py`をダウンロードし、Raspberry Pi Picoに書き込む。
-
-[code1.py](./code1.py)
-
-上のリンクを開き、右上の`Raw`を右クリックして`名前をつけてリンク先を保存`を選択するとプログラムがダウンロードできる。
-
-ダウンロードした`code1.py`の名前を`code.py`に変更する(Raspberry Pi Picoでは`code.py`という名前のプログラムが
-最初に実行されるため）。
-
-Raspberry Pi Picoのドライブ`CIRCUITPY`の中に`code.py`をコピーすると、プログラムが実行できる。
-
-適当な入力欄に入力できるようにしてから、基板のボタンを押してみて文字が入力されたら成功！
-
-
-
-### プログラムを書き換える
-
-`CIRCUITPY`上に保存した`code.py`をメモ帳で開き、プログラムを変更して上書き保存すると変更が反映される。
+注意: プログラムはRaspberry Pi Picoの電源を切ると消える。エクスプローラを開き、`CIRCUITPY`というドライブの中にある`code.py`に
+同じプログラムを書き込むと、電源を切っても内容が保存され、次の起動時に自動的に実行される。
 
 ## 課題
 
