@@ -93,7 +93,7 @@ Piper Makeの右下が`STORY MODE`になっているため、`CREATIVE MODE`に�
 
 `NEW PROJECT`を作成し、以下のようにブロックを配置する。
 
-![](sample_block.png)
+![](img/sample_block.png)
 
 左下の`CONNECT`を押してから左上の`START`を押すと、プログラムが動作する。
 
