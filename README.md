@@ -59,7 +59,7 @@ Raspberry Pi Picoを使って自由にカスタマイズした定型文を入力
 	<tr>
 		<td>CdSセル*</td>
 		<td>1</td>
-		<td>あ</td>
+		<td>秋月電子 I-00110</td>
 	</tr>
 	<tr>
 		<td>抵抗(10k)*</td>
@@ -69,7 +69,7 @@ Raspberry Pi Picoを使って自由にカスタマイズした定型文を入力
 	<tr>
 		<td>圧電スピーカー*</td>
 		<td>1</td>
-		<td>あ</td>
+		<td>秋月電子 P-04118</td>
 	</tr>
 </table>
 
