@@ -11,7 +11,7 @@ keyboard_layout = KeyboardLayoutUS(keyboard)
 
 
 # スイッチのピンを設定
-switch_pins = [board.GP11, board.GP12, board.GP13]
+switch_pins = [board.GP6, board.GP11, board.GP15]
 switches = []
 for pin in switch_pins:
     switch = DigitalInOut(pin)
@@ -21,7 +21,7 @@ for pin in switch_pins:
     switches.append(switch)
 
 # LEDのピンを設定
-led_pins = [board.GP2, board.GP3, board.GP4]
+led_pins = [board.GP5, board.GP10, board.GP14]
 leds = []
 for pin in led_pins:
     led = DigitalInOut(pin)
@@ -44,4 +44,3 @@ while True:
             led.value = 1
 
     time.sleep(0.01)
-
