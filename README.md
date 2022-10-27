@@ -74,7 +74,7 @@ Raspberry Pi Picoを使って自由にカスタマイズした定型文を入力
 </table>
 
 - \* 課題2, 3を行う場合のみ必要
-- ** 中国の[Elecrow](https://www.elecrow.com/)などに[gerber.zip](./gerber.zip)を渡して発注する。2層基板
+- ** 中国の[Elecrow](https://www.elecrow.com/)などに[gerber.zip](./gerber.zip)を渡して発注する。2層基板、81mm x 61mm
 - *** 納期と品質と郵便が届かない可能性に目をつぶればAliExpressが安い
 
 ## セットアップ手順
